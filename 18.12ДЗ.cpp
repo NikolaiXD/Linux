@@ -5,14 +5,16 @@
 
 using namespace std;
 
-class User {
+class User 
+{
 private:
     string _name;
     string _login;
     string _pass;
 
 public:
-    void readFromFile(const string& filename) {
+    void readFromFile(const string& filename) 
+    {
         ifstream file(filename);
         if (!file.is_open()) {
             cerr << "Ошибка: Невозможно открыть файл для чтения." << endl;
@@ -22,9 +24,11 @@ public:
         file.close();
     }
 
-    void writeToFile(const string& filename) {
+    void writeToFile(const string& filename) 
+    {
         ofstream file(filename);
-        if (!file.is_open()) {
+        if (!file.is_open()) 
+        {
             cerr << "Ошибка: Невозможно открыть файл для записи." << endl;
             return;
         }
@@ -35,16 +39,19 @@ public:
     // Добавьте геттеры и сеттеры по необходимости
 };
 
-class Message {
+class Message 
+{
 private:
     string _text;
     string _sender;
     string _receiver;
 
 public:
-    void readFromFile(const string& filename) {
+    void readFromFile(const string& filename) 
+    {
         ifstream file(filename);
-        if (!file.is_open()) {
+        if (!file.is_open()) 
+        {
             cerr << "Ошибка: Невозможно открыть файл для чтения." << endl;
             return;
         }
@@ -52,7 +59,8 @@ public:
         file.close();
     }
 
-    void writeToFile(const string& filename) {
+    void writeToFile(const string& filename) 
+    {
         ofstream file(filename);
         if (!file.is_open()) {
             cerr << "Ошибка: Невозможно открыть файл для записи." << endl;
@@ -65,7 +73,8 @@ public:
     // Добавьте геттеры и сеттеры по необходимости
 };
 
-bool hasPermission(const string& filename) {
+bool hasPermission(const string& filename) 
+{
     struct stat fileStat;
     if (stat(filename.c_str(), &fileStat) == -1) {
         cerr << "Ошибка: Невозможно получить статус файла." << endl;
